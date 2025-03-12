@@ -24,6 +24,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_branch: gh-pages
-        folder: public
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public  # This should be the Hugo build output folder
+        publish_branch: gh-pages  # This specifies that the site will be deployed to the gh-pages branch
 
